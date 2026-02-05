@@ -1,0 +1,145 @@
+/* 기본적인 스타일 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.container {
+  width: 500px;
+  height: 90%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+
+/* 헤더 */
+header {
+  height: 60px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 0 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+header .back-button i {
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+}
+
+header .title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+header .back-button i {
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+}
+
+header .title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  flex-grow: 1;
+  color: #333;
+}
+
+header .exit-button {
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: #333;
+  cursor: pointer;
+}
+
+header .exit-button:hover {
+  font-size: 14px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 15px;
+  color: #333;
+  cursor: pointer;
+}
+
+.exit-button {
+  display: none;
+}
+
+
+/* 채팅 목록 */
+.chat-list {
+  flex-grow: 1;
+  /* 남은 공간을 채우도록 설정 */
+  overflow-y: auto;
+  /* 스크롤 가능 */
+  background-color: #fff;
+}
+
+/* 채팅 항목 */
+.chat-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.chat-item:last-child {
+  border-bottom: none;
+}
+
+.chat-item .profile img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.chat-item .chat-details {
+  flex: 1;
+}
+
+.chat-item .user-name {
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
+.chat-item .chat-title {
+  color: #888;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.chat-item .chat-time {
+  font-size: 12px;
+  color: #aaa;
+}

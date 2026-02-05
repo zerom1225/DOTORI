@@ -1,0 +1,567 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap);
+
+.hidden {
+    display: none !important;
+    /* 우선순위 강제 적용 */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+/* 해더 시작 */
+#header {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    max-width: 1280px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1%;
+}
+
+.topBannerContainer {
+    width: 100vw;
+    background-color: #141313;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topBannerContent {
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    /* 이미지 중앙 정렬 */
+    align-items: center;
+}
+
+.headerBanner {
+    max-width: 100%;
+    /* 이미지가 부모 요소 너비에 맞게 조정 */
+    height: auto;
+    /* 이미지 비율 유지 */
+}
+
+.mainSector a {
+    text-decoration: none;
+    color: black;
+}
+
+.headerImg {
+    width: 150px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.mainSector {
+    margin-top: 35px;
+}
+
+/* 헤더 버튼 섹션 */
+.headerButtons {
+    display: flex;
+    gap: 20px;
+    /* 버튼 간 간격 */
+    justify-content: flex-end;
+    /* 버튼을 오른쪽 정렬 */
+    align-items: center;
+}
+
+.headerBtn {
+    background: none;
+    /* 배경 제거 */
+    border: none;
+    /* 테두리 제거 */
+    font-size: 14px;
+    /* 텍스트 크기 */
+    color: #333;
+    /* 텍스트 색상 */
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* 아이콘과 텍스트 간격 */
+}
+
+.headerBtn:hover {
+    color: #8d6e63;
+    /* 호버 시 강조 색상 */
+}
+
+.material-symbols-outlined {
+    font-size: 28px;
+    /* 아이콘 크기 */
+    vertical-align: middle;
+}
+
+.max {
+    margin-top: 15px;
+}
+
+/* headerBtn */
+#loginBtn:hover {
+    cursor: pointer;
+}
+
+/* 드롭다운 스타일 */
+.dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ddd;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+#dropdownBtn {
+    background-color: transparent;
+    color: #333;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dropdownText {
+    flex-grow: 1;
+}
+
+.material-symbols-outlined.dropdownArrow {
+    font-size: 20px;
+    color: #333;
+    transition: transform 0.3s ease;
+}
+
+#dropdownBtn.active .dropdownArrow {
+    transform: rotate(180deg);
+    /* 드롭다운 활성화 시 화살표 회전 */
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 150px;
+    display: none;
+    /* 기본적으로 숨김 */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+}
+
+.dropdownMenu li {
+    padding: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdownMenu li:hover {
+    background-color: #f1f1f1;
+}
+
+.mainSector input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    margin-top: 2px;
+    max-width: 100%;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+.search-img {
+    cursor: pointer;
+}
+
+.row-hr {
+    display: inline-block;
+    border-left: thin solid lightgray;
+    height: 15px;
+}
+
+.keyword {
+    display: flex;
+    max-width: 100%;
+    max-height: 45px;
+    font-size: small;
+    color: #212124;
+    align-items: center;
+    font-weight: bolder;
+}
+
+.keyword a {
+    display: flex;
+    max-width: 100%;
+    max-height: 45px;
+    font-size: small;
+    color: #96a6b3;
+    margin-left: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyword a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* 컨텐츠시작 */
+.container {
+    font-family: 'Noto Sans', sans-serif;
+    background-color: #ffffff;
+    color: #343a40;
+    line-height: 1.6;
+    padding: 25px;
+}
+
+.area {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1280px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-top: 1px solid #ddd;
+    padding-top: 25px;
+}
+
+#previewImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    border: 1px dashed #ced4da;
+    border-radius: 10px;
+    background-color: #ffffff;
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+}
+
+#previewImages img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    z-index: 10;
+}
+
+.file-input-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.file-input-wrapper input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-input-wrapper button {
+    padding: 10px 20px;
+    background-color: #A86202;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.file-input-wrapper button:hover {
+    background-color: #814c01;
+    color: #fff;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #007bff;
+}
+
+.container label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.container input[type="text"],
+.container input[type="file"],
+.container textarea,
+.container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+    padding: 16px;
+    border-radius: 5px;
+}
+
+.container input[type="text"]:focus,
+.container textarea:focus,
+.container select:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(128, 189, 255, 0.5);
+}
+
+.container textarea {
+    resize: none;
+    height: 300px;
+}
+
+.container input[type="radio"] {
+    margin-right: 5px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group input[type="text"] {}
+
+.input-group input[type="button"] {
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    color: #333;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 0 #eee;
+    margin-left: 15px;
+}
+
+.input-group input[type="button"]:hover {
+    background: #f0f0f0;
+}
+
+.container button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #A86202;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background: #814c01;
+}
+
+#previewImages .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#previewImages .nav.prev {
+    left: 10px;
+}
+
+#previewImages .nav.next {
+    right: 10px;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.right-input {
+    margin-bottom: 15px;
+}
+
+#postBtn {
+    margin-top: 20px;
+}
+
+.right-input .trade_radio {
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    background-color: #ffffff;
+    overflow: hidden;
+    padding: 20px 30px 16px;
+}
+
+.radio {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: baseline;
+    margin-right: 10px;
+}
+
+
+/* 푸터 스타일 */
+.contents {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.footer {
+    background-color: #fff;
+    /* 밝은 회색 배경 */
+    color: #333;
+    /* 텍스트 색상 */
+    font-family: 'Noto Sans', sans-serif;
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    width: 1280px;
+}
+
+.footerTop,
+.footerMiddle,
+.footerBottom {
+    margin: 0 auto;
+    padding: 10px 0;
+}
+
+.footerTop {
+    border-bottom: 1px solid #ddd;
+    /* 상단 구분선 */
+}
+
+.companyInfo p {
+    margin: 5px 0;
+}
+
+.companyInfo a {
+    color: #007bff;
+    /* 링크 색상 */
+    text-decoration: none;
+}
+
+.companyInfo a:hover {
+    text-decoration: underline;
+}
+
+.contactLinks {
+    margin-top: 10px;
+    color: #555;
+}
+
+.contactLinks a {
+    color: #555;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.contactLinks a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+.footerMiddle {
+    text-align: center;
+}
+
+.policyLinks a {
+    color: #007bff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.policyLinks a:hover {
+    text-decoration: underline;
+}
+
+.footerBottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    /* 하단 구분선 */
+}
+
+.notice {
+    flex: 1 1 70%;
+    color: #666;
+    font-size: 13px;
+}
+
+.socialLinks {
+    text-align: right;
+    display: flex;
+    gap: 15px;
+}
+
+.socialIcon {
+    font-size: 20px;
+    /* 아이콘 크기 */
+    color: #555;
+    /* 기본 아이콘 색상 */
+    transition: transform 0.3s, color 0.3s;
+    /* 호버 효과 추가 */
+}
+
+.socialIcon:hover {
+    transform: scale(1.2);
+    /* 확대 효과 */
+    color: #007bff;
+    /* 호버 시 색상 변경 */
+}

@@ -1,0 +1,24 @@
+# ===== Build output (Maven) =====
+/target/
+**/target/
+
+# ===== Logs =====
+/logs/
+**/logs/
+*.log
+
+# ===== settings =====
+/.settings/
+**/.settings/
+
+# ===== Spring Tool Suite / Eclipse (개인/환경 의존) =====
+/.springBeans
+**/.springBeans
+/.project
+/.classpath
+
+# ===== OS / temp =====
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
