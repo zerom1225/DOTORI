@@ -11,6 +11,9 @@
 /.settings/
 **/.settings/
 
+# ==== 로컬 시크릿 (커밋 금지) ====
+src/main/resources/application-local.properties 
+
 # ===== Spring Tool Suite / Eclipse (개인/환경 의존) =====
 /.springBeans
 **/.springBeans
