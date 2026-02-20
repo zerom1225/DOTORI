@@ -72,5 +72,11 @@ REMAP_TABLESPACE=DOTORI_TS:USERS
 - Fix: `REMAP_TABLESPACE=DOTORI_TS:USERS`
 
 ### CWE-798(하드코딩 크리덴셜) Issue
-- Cause: 설정 파일에 계정/비밀번호가 평문으로 하드코딩 된 채 깃허브 공개 저장소에 커밋되어 있음.
+- Cause: 설정 파일에 계정/비밀번호가 평문으로 하드코딩 된 채 깃허브 공개 저장소에 커밋되어 있었음.
 - Fix: 민감정보(DB/SMTP)는 properties로 외부화했고, 실제 값 파일은 커밋하지 않음. 또한 템플릿 파일을 복사해 로컬 설정을 구성
+
+## DB Integrity Improvement (2026.02)
+
+- 도메인 무결성 규칙 정의
+- enum 기반 상태값 정의
+- 데이터 일관성을 보장하기 위해 DB 제약 조건 적용
