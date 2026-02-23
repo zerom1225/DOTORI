@@ -3,8 +3,6 @@ package com.pcwk.ehr.email.dao;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import javax.sql.DataSource;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +21,12 @@ public class EmailDaoJdbc implements EmailDao {
 	final Logger log = LogManager.getLogger(UserDaoJdbc.class);
 
 	@Autowired
-	private DataSource dataSource;
-
-	@Autowired
 	private JdbcTemplate jdbcTemplate;
 
 	public EmailDaoJdbc() {
 		super();
 	}
-	
+
 	private RowMapper<EmailVO> emailMapper = new RowMapper<EmailVO>() {
 
 		@Override
@@ -119,7 +114,7 @@ public class EmailDaoJdbc implements EmailDao {
 		sb.append("    SET email = ?          \n");
 		sb.append(" WHERE email = ?           \n");
 
-		Object[] args = { inVO.getNew_Email(), inVO.getEmail()};
+		Object[] args = { inVO.getNew_Email(), inVO.getEmail() };
 
 		log.debug("1.param:");
 		int i = 0;
@@ -163,7 +158,7 @@ public class EmailDaoJdbc implements EmailDao {
 		sb.append("    SET auth_code = ?          \n");
 		sb.append(" WHERE email = ?           \n");
 
-		Object[] args = { inVO.getAuth_code(), inVO.getEmail()};
+		Object[] args = { inVO.getAuth_code(), inVO.getEmail() };
 
 		log.debug("1.param:");
 		int i = 0;
@@ -178,18 +173,18 @@ public class EmailDaoJdbc implements EmailDao {
 	}
 
 	@Override
-	public int isExistsEmail(EmailVO inVO) throws SQLException, DataAccessException{
+	public int isExistsEmail(EmailVO inVO) throws SQLException, DataAccessException {
 		int flag = 0;
-		
+
 		StringBuilder sb = new StringBuilder(50);
 		sb.append("SELECT COUNT(*) \n");
 		sb.append("FROM email_auth \n");
 		sb.append("WHERE email = ? \n");
-		
+
 		Object[] args = { inVO.getEmail() };
-		
+
 		flag = this.jdbcTemplate.queryForObject(sb.toString(), args, Integer.class);
-		
+
 		return flag;
 	}
 
