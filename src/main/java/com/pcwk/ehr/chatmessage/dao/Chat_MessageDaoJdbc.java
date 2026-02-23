@@ -1,4 +1,4 @@
-package com.pcwk.ehr.chat_message.dao;
+package com.pcwk.ehr.chatmessage.dao;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,7 +13,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.pcwk.ehr.chat_message.domain.Chat_MessageVO;
+import com.pcwk.ehr.chatmessage.domain.Chat_MessageVO;
 import com.pcwk.ehr.user.domain.UserVO;
 
 @Repository

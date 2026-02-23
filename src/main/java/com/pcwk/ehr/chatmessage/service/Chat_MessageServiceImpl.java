@@ -1,4 +1,4 @@
-package com.pcwk.ehr.chat_message.service;
+package com.pcwk.ehr.chatmessage.service;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.pcwk.ehr.chat_message.dao.Chat_MessageDao;
-import com.pcwk.ehr.chat_message.domain.Chat_MessageVO;
+import com.pcwk.ehr.chatmessage.dao.Chat_MessageDao;
+import com.pcwk.ehr.chatmessage.domain.Chat_MessageVO;
 import com.pcwk.ehr.user.domain.UserVO;
 
 @Service

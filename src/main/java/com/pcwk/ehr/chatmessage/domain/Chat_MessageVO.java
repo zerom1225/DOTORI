@@ -1,4 +1,4 @@
-package com.pcwk.ehr.chat_message.domain;
+package com.pcwk.ehr.chatmessage.domain;
 
 import java.time.LocalDateTime;
 

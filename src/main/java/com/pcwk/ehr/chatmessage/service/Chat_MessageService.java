@@ -1,11 +1,11 @@
-package com.pcwk.ehr.chat_message.service;
+package com.pcwk.ehr.chatmessage.service;
 
 import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
-import com.pcwk.ehr.chat_message.domain.Chat_MessageVO;
+import com.pcwk.ehr.chatmessage.domain.Chat_MessageVO;
 import com.pcwk.ehr.user.domain.UserVO;
 
 public interface Chat_MessageService {

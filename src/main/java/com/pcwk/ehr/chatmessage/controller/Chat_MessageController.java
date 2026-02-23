@@ -1,4 +1,4 @@
-package com.pcwk.ehr.chat_message.controller;
+package com.pcwk.ehr.chatmessage.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

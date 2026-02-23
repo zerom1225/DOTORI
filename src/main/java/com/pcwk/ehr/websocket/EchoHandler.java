@@ -14,7 +14,7 @@ import org.springframework.web.socket.WebSocketSession;
 import org.springframework.web.socket.handler.TextWebSocketHandler;
 
 import com.pcwk.ehr.chat.service.ChatService;
-import com.pcwk.ehr.chat_message.service.Chat_MessageService;
+import com.pcwk.ehr.chatmessage.service.Chat_MessageService;
 import com.pcwk.ehr.user.domain.UserVO;
 import com.pcwk.ehr.user.service.UserService;
 
