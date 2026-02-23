@@ -30,8 +30,8 @@ import com.google.gson.Gson;
 import com.pcwk.ehr.cmn.MessageVO;
 import com.pcwk.ehr.email.domain.EmailVO;
 import com.pcwk.ehr.email.service.EmailService;
-import com.pcwk.ehr.product_board.domain.Product_BoardVO;
-import com.pcwk.ehr.product_board.service.Product_BoardService;
+import com.pcwk.ehr.productboard.domain.Product_BoardVO;
+import com.pcwk.ehr.productboard.service.Product_BoardService;
 import com.pcwk.ehr.user.domain.UserVO;
 import com.pcwk.ehr.user.service.UserService;
 

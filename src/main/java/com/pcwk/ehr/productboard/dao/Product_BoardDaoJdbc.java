@@ -1,4 +1,4 @@
-package com.pcwk.ehr.product_board.dao;
+package com.pcwk.ehr.productboard.dao;
 
 import java.io.Reader;
 import java.sql.Clob;
@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.pcwk.ehr.product_board.domain.Product_BoardVO;
+import com.pcwk.ehr.productboard.domain.Product_BoardVO;
 import com.pcwk.ehr.user.dao.UserDaoJdbc;
 
 @Repository

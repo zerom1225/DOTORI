@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 import com.pcwk.ehr.cmn.MessageVO;
-import com.pcwk.ehr.product_board.service.Product_BoardService;
+import com.pcwk.ehr.productboard.service.Product_BoardService;
 import com.pcwk.ehr.user.domain.UserVO;
 
 @Controller

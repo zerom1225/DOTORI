@@ -1,4 +1,4 @@
-package com.pcwk.ehr.product_board.controller;
+package com.pcwk.ehr.productboard.controller;
 
 import java.io.File;
 import java.io.IOException;
@@ -29,8 +29,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.google.gson.Gson;
 import com.pcwk.ehr.cmn.MessageVO;
 import com.pcwk.ehr.cmn.productBoard_Cmn;
-import com.pcwk.ehr.product_board.domain.Product_BoardVO;
-import com.pcwk.ehr.product_board.service.Product_BoardService;
+import com.pcwk.ehr.productboard.domain.Product_BoardVO;
+import com.pcwk.ehr.productboard.service.Product_BoardService;
 import com.pcwk.ehr.user.domain.UserVO;
 import com.pcwk.ehr.user.service.UserService;
 

@@ -1,11 +1,11 @@
-package com.pcwk.ehr.product_board.service;
+package com.pcwk.ehr.productboard.service;
 
 import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 
-import com.pcwk.ehr.product_board.domain.Product_BoardVO;
+import com.pcwk.ehr.productboard.domain.Product_BoardVO;
 
 public interface Product_BoardService {
 

@@ -1,4 +1,4 @@
-package com.pcwk.ehr.product_board.domain;
+package com.pcwk.ehr.productboard.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;

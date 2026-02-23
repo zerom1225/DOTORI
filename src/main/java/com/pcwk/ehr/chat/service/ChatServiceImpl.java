@@ -13,8 +13,8 @@ import org.springframework.stereotype.Service;
 import com.pcwk.ehr.chat.dao.ChatDao;
 import com.pcwk.ehr.chat.domain.ChatDTO;
 import com.pcwk.ehr.chat.domain.ChatVO;
-import com.pcwk.ehr.product_board.dao.Product_BoardDao;
-import com.pcwk.ehr.product_board.domain.Product_BoardVO;
+import com.pcwk.ehr.productboard.dao.Product_BoardDao;
+import com.pcwk.ehr.productboard.domain.Product_BoardVO;
 import com.pcwk.ehr.user.dao.UserDao;
 import com.pcwk.ehr.user.domain.UserVO;
 

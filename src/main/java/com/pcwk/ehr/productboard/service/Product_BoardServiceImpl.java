@@ -1,4 +1,4 @@
-package com.pcwk.ehr.product_board.service;
+package com.pcwk.ehr.productboard.service;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
 
-import com.pcwk.ehr.product_board.dao.Product_BoardDao;
-import com.pcwk.ehr.product_board.domain.Product_BoardVO;
+import com.pcwk.ehr.productboard.dao.Product_BoardDao;
+import com.pcwk.ehr.productboard.domain.Product_BoardVO;
 
 @Service
 public class Product_BoardServiceImpl implements Product_BoardService {

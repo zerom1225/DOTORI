@@ -1,6 +1,6 @@
 package com.pcwk.ehr.chat.domain;
 
-import com.pcwk.ehr.product_board.domain.Product_BoardVO;
+import com.pcwk.ehr.productboard.domain.Product_BoardVO;
 import com.pcwk.ehr.user.domain.UserVO;
 
 public class ChatDTO {

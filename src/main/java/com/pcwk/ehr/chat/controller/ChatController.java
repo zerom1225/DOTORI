@@ -29,7 +29,7 @@ import com.pcwk.ehr.chat.service.ChatService;
 import com.pcwk.ehr.chat_message.domain.Chat_MessageVO;
 import com.pcwk.ehr.chat_message.service.Chat_MessageService;
 import com.pcwk.ehr.cmn.MessageVO;
-import com.pcwk.ehr.product_board.service.Product_BoardService;
+import com.pcwk.ehr.productboard.service.Product_BoardService;
 import com.pcwk.ehr.user.domain.UserVO;
 import com.pcwk.ehr.user.service.UserService;
 
