@@ -12,16 +12,13 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 @Controller
 public class WebSocketConfig implements WebSocketConfigurer {
 
-    @Autowired
-    EchoHandler echoHandler;
-	
+	@Autowired
+	EchoHandler echoHandler;
 
-    @Override
-    public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
-        // /chatRoom 경로로 WebSocket 핸들러를 매핑
-        registry.addHandler(echoHandler, "/chatRoom")
-                .setAllowedOrigins("http://localhost:8080");  // 로컬 도메인에서 접근 허용
-    }
-    
+	@Override
+	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
+		// /chatRoom 경로로 WebSocket 핸들러를 매핑
+		registry.addHandler(echoHandler, "/chatRoom").setAllowedOrigins("http://localhost:8080"); // 로컬 도메인에서 접근 허용
+	}
 
 }
