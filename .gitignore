@@ -19,6 +19,7 @@ src/main/resources/application-local.properties
 **/.springBeans
 /.project
 /.classpath
+/.metadata/
 
 # ===== OS / temp =====
 .DS_Store
