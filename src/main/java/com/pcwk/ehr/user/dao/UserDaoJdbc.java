@@ -5,8 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.sql.DataSource;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +21,6 @@ import com.pcwk.ehr.user.domain.UserVO;
 @Repository
 public class UserDaoJdbc implements UserDao {
 	final Logger log = LogManager.getLogger(UserDaoJdbc.class);
-
-	@Autowired
-	private DataSource dataSource;
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -54,13 +49,6 @@ public class UserDaoJdbc implements UserDao {
 
 	public UserDaoJdbc() {
 		super();
-	}
-
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
-
-		this.jdbcTemplate = new JdbcTemplate(dataSource);
-
 	}
 
 	/**
@@ -472,7 +460,6 @@ public class UserDaoJdbc implements UserDao {
 		}
 
 		outVO = this.jdbcTemplate.queryForObject(sb.toString(), userMapper, args);
-
 
 		return outVO;
 	}

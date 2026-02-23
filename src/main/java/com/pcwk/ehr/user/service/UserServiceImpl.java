@@ -21,7 +21,6 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.mail.MailSender;
 import org.springframework.stereotype.Service;
 
 import com.pcwk.ehr.cmn.DTO;
@@ -39,15 +38,8 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	UserDao userDao;
 
-	@Autowired
-	private MailSender mailSender;
-
 	public UserServiceImpl() {
 
-	}
-
-	public void setMailSender(MailSender mailSender) {
-		this.mailSender = mailSender;
 	}
 
 	public void setUserDao(UserDao userDao) {
