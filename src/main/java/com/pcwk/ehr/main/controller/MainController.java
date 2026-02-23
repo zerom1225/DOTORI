@@ -2,7 +2,6 @@ package com.pcwk.ehr.main.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import javax.xml.ws.RequestWrapper;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -115,7 +114,7 @@ public class MainController {
 	@RequestMapping(value = "/user/checksession.do", method = RequestMethod.GET, produces = "application/json")
 	@ResponseBody
 	public String checkSession(HttpSession session) {
-		
+
 		log.debug("세션 체크 접근");
 
 		UserVO user = (UserVO) session.getAttribute("user");
@@ -127,7 +126,7 @@ public class MainController {
 		} else {
 			log.debug("로그인O 접근");
 			return new Gson().toJson(new MessageVO(1, "로그인 O"));
-			
+
 		}
 
 	}
