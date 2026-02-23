@@ -11,15 +11,13 @@ import org.springframework.stereotype.Service;
 
 import com.pcwk.ehr.chat_message.dao.Chat_MessageDao;
 import com.pcwk.ehr.chat_message.domain.Chat_MessageVO;
-import com.pcwk.ehr.report.dao.ReportDao;
-import com.pcwk.ehr.report.domain.ReportVO;
 import com.pcwk.ehr.user.domain.UserVO;
 
 @Service
 public class Chat_MessageServiceImpl implements Chat_MessageService {
-	
-final Logger log = LogManager.getLogger(getClass());
-	
+
+	final Logger log = LogManager.getLogger(getClass());
+
 	@Autowired
 	Chat_MessageDao chat_MessageDao;
 
@@ -33,9 +31,5 @@ final Logger log = LogManager.getLogger(getClass());
 	public List<Chat_MessageVO> getChat_Messages(int chat_Id) throws SQLException, DataAccessException {
 		return chat_MessageDao.getChat_Messages(chat_Id);
 	}
-
-
-	
-
 
 }

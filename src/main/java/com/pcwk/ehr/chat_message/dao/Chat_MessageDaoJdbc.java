@@ -5,8 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.sql.DataSource;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +13,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import com.pcwk.ehr.chat.domain.ChatVO;
 import com.pcwk.ehr.chat_message.domain.Chat_MessageVO;
 import com.pcwk.ehr.user.domain.UserVO;
 
@@ -23,9 +20,6 @@ import com.pcwk.ehr.user.domain.UserVO;
 public class Chat_MessageDaoJdbc implements Chat_MessageDao {
 
 	final Logger log = LogManager.getLogger(Chat_MessageDaoJdbc.class);
-
-	@Autowired
-	private DataSource dataSource;
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -84,7 +78,7 @@ public class Chat_MessageDaoJdbc implements Chat_MessageDao {
 
 	@Override
 	public List<Chat_MessageVO> getChat_Messages(int chat_Id) throws SQLException, DataAccessException {
-		
+
 		List<Chat_MessageVO> chat_MessageList = new ArrayList<Chat_MessageVO>();
 
 		StringBuilder sb = new StringBuilder(200);
@@ -94,7 +88,6 @@ public class Chat_MessageDaoJdbc implements Chat_MessageDao {
 		sb.append("  FROM chat_message c1                                            \n");
 		sb.append(" WHERE chat_Id = ?                                                \n");
 		sb.append(" ORDER BY c1.message_date asc                                     \n");
-		 
 
 		Object[] args = { chat_Id };
 

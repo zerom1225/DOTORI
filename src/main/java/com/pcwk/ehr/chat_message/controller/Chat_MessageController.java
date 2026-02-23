@@ -12,7 +12,7 @@ public class Chat_MessageController {
 	public Chat_MessageController() {
 		super();
 		log.debug("┌───────────────────────────────────────┐");
-		log.debug("│    **product_BoardService() 생성**     │");
+		log.debug("│    **Chat_MessageController() 생성**     │");
 		log.debug("└───────────────────────────────────────┘");
 	}
 

@@ -12,6 +12,7 @@ public interface Chat_MessageService {
 
 	/**
 	 * 채팅 메시지 저장
+	 * 
 	 * @param chat_Id
 	 * @param sender
 	 * @param chat_Content
@@ -24,6 +25,7 @@ public interface Chat_MessageService {
 
 	/**
 	 * 채팅 메시지 불러오기
+	 * 
 	 * @param chat_Id
 	 * @return List<Chat_MessageVO>
 	 * @throws SQLException
