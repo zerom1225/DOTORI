@@ -5,8 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.sql.DataSource;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,17 +14,12 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.pcwk.ehr.chat.domain.ChatVO;
-import com.pcwk.ehr.email.domain.EmailVO;
-import com.pcwk.ehr.report.domain.ReportVO;
 import com.pcwk.ehr.user.domain.UserVO;
 
 @Repository
 public class ChatDaoJdbc implements ChatDao {
 
 	final Logger log = LogManager.getLogger(ChatDaoJdbc.class);
-
-	@Autowired
-	private DataSource dataSource;
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -79,10 +72,10 @@ public class ChatDaoJdbc implements ChatDao {
 		return flag;
 
 	}
-	
+
 	@Override
-	public int doSelect_Chat_Id( int board_Id, int buyer_Id) throws SQLException, DataAccessException {
-		
+	public int doSelect_Chat_Id(int board_Id, int buyer_Id) throws SQLException, DataAccessException {
+
 		int flag;
 
 		StringBuilder sb = new StringBuilder(100);
@@ -103,10 +96,7 @@ public class ChatDaoJdbc implements ChatDao {
 		flag = this.jdbcTemplate.queryForObject(sb.toString(), args, Integer.class);
 
 		return flag;
-		
-		
-		
-		
+
 	}
 
 	@Override
@@ -236,24 +226,24 @@ public class ChatDaoJdbc implements ChatDao {
 	@Override
 	public int exit_Chat(int chat_Id) throws SQLException, DataAccessException {
 		int flag;
-		
+
 		StringBuilder sb = new StringBuilder(100);
-		
+
 		sb.append("delete             \n");
 		sb.append("  from chat        \n");
 		sb.append("where chat_id = ?  \n");
-		
+
 		Object[] args = { chat_Id };
 
 		log.debug("1.param:");
 		for (Object obj : args) {
 			log.debug(obj.toString());
 		}
-		
+
 		flag = this.jdbcTemplate.update(sb.toString(), args);
-		
+
 		return flag;
-		
+
 	}
 
 }
