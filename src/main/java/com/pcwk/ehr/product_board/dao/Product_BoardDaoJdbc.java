@@ -7,8 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.sql.DataSource;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +24,6 @@ import com.pcwk.ehr.user.dao.UserDaoJdbc;
 public class Product_BoardDaoJdbc implements Product_BoardDao {
 
 	final Logger log = LogManager.getLogger(UserDaoJdbc.class);
-
-	@Autowired
-	private DataSource dataSource;
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
@@ -692,17 +687,17 @@ public class Product_BoardDaoJdbc implements Product_BoardDao {
 		List<Object> args = new ArrayList<Object>();
 
 		StringBuilder sb = new StringBuilder(500);
-		
+
 		sb.append("UPDATE product_board    \n");
 		sb.append("   SET board_status = 1 \n");
-		
-		if(selected_Buyer_Id != -1) {
-			
-		sb.append("       , buyer_id = ?   \n");
-		args.add(selected_Buyer_Id);
-		
+
+		if (selected_Buyer_Id != -1) {
+
+			sb.append("       , buyer_id = ?   \n");
+			args.add(selected_Buyer_Id);
+
 		}
-		
+
 		sb.append(" WHERE board_Id = ?     \n");
 		args.add(board_Id);
 

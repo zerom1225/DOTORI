@@ -20,7 +20,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -126,8 +125,6 @@ public class Product_BoardController {
 		String message = "";
 		int flag = 0;
 
-		UserVO user = (UserVO) session.getAttribute("user");
-
 		Product_BoardVO pbVO = new Product_BoardVO();
 
 		try {
@@ -229,7 +226,7 @@ public class Product_BoardController {
 			model.addAttribute("error", "해당 게시글을 찾을 수 없습니다.");
 			return "/main";
 		}
-		
+
 		compare_Now = productBoard_Cmn.compare_Now(pbVO.getMod_Date());
 		view_Count = pbVO.getView_Count();
 
@@ -249,8 +246,6 @@ public class Product_BoardController {
 
 		String message = "";
 		int flag = 0;
-
-		UserVO user = (UserVO) session.getAttribute("user");
 
 		try {
 
@@ -452,14 +447,14 @@ public class Product_BoardController {
 			@RequestParam(value = "trade_Address", required = false) String trade_Address,
 			@RequestParam(value = "category_Id", defaultValue = "-1") int category_Id,
 			@RequestParam(value = "page", defaultValue = "1") int page) {
-		
+
 		log.debug("search_GetProducts_WithFiltering() 실행");
-		log.debug("order : {}", order );
-		log.debug("searchWord : {}", searchWord );
-		log.debug("board_Status : {}", board_Status );
-	    log.debug("trade_Address : {}", trade_Address );			
-		log.debug("category_Id : {}", category_Id );
-		log.debug("page : {}", page );
+		log.debug("order : {}", order);
+		log.debug("searchWord : {}", searchWord);
+		log.debug("board_Status : {}", board_Status);
+		log.debug("trade_Address : {}", trade_Address);
+		log.debug("category_Id : {}", category_Id);
+		log.debug("page : {}", page);
 
 		Map<String, Object> response = new HashMap<String, Object>();
 
@@ -469,8 +464,10 @@ public class Product_BoardController {
 
 		try {
 
-			productList = product_BoardService.search_GetProducts_WithFiltering(order, searchWord, board_Status, trade_Address, category_Id, page);
-			totalItems = product_BoardService.search_GetProductsCount_WithFiltering(searchWord, board_Status, trade_Address, category_Id);
+			productList = product_BoardService.search_GetProducts_WithFiltering(order, searchWord, board_Status,
+					trade_Address, category_Id, page);
+			totalItems = product_BoardService.search_GetProductsCount_WithFiltering(searchWord, board_Status,
+					trade_Address, category_Id);
 
 		} catch (SQLException e) {
 			response.put("error", "필터링 검색어 기반 상품 조회 중 DB 예외 발생");
@@ -485,25 +482,26 @@ public class Product_BoardController {
 		return new Gson().toJson(response);
 
 	}
-	
+
 	@RequestMapping(value = "/product_board/change_board_status.do", method = RequestMethod.POST, produces = "application/json")
 	@ResponseBody
-	public String changeBoard_Status(@RequestParam("board_Id") int board_Id, @RequestParam("selected_Buyer_Id") int selected_Buyer_Id) {
-		
+	public String changeBoard_Status(@RequestParam("board_Id") int board_Id,
+			@RequestParam("selected_Buyer_Id") int selected_Buyer_Id) {
+
 		log.debug("changeBoard_Status 접근");
 		log.debug("board_Id : {}", board_Id);
 		log.debug("selected_Buyer_Id : {}", selected_Buyer_Id);
-		
+
 		int flag;
-		
+
 		try {
 			flag = product_BoardService.changeBoard_Status(board_Id, selected_Buyer_Id);
 		} catch (SQLException e) {
 			return new Gson().toJson(new MessageVO(0, "판매 완료 상태로 변경 중 DB 예외 발생"));
 		}
-		
-		return new Gson().toJson(new MessageVO(flag, "판매 완료 상태로 변경되었습니다."));		
-		
+
+		return new Gson().toJson(new MessageVO(flag, "판매 완료 상태로 변경되었습니다."));
+
 	}
 
 }

@@ -75,26 +75,26 @@ public class Product_BoardServiceImpl implements Product_BoardService {
 	public int update_Product_Board(Product_BoardVO pbVO) throws SQLException {
 
 		if (pbVO.getBoard_Image() == null) {
-			
+
 			return product_BoardDao.update_Product_Board_withoutImages(pbVO);
-			
+
 		} else {
-			
+
 			return product_BoardDao.update_Product_Board_withImages(pbVO);
-			
+
 		}
 
 	}
 
 	@Override
 	public int bumpUp_Post(int board_Id) throws SQLException {
-		
+
 		return product_BoardDao.bumpUp_Post(board_Id);
 	}
 
 	@Override
 	public int delete_Post(int board_Id) throws SQLException {
-		
+
 		return product_BoardDao.delete_Post(board_Id);
 	}
 
@@ -105,7 +105,6 @@ public class Product_BoardServiceImpl implements Product_BoardService {
 
 	@Override
 	public List<Product_BoardVO> search_GetProducts(String searchWord, int page) throws SQLException {
-		// TODO Auto-generated method stub
 		return product_BoardDao.search_GetProducts(searchWord, page);
 	}
 
@@ -117,13 +116,15 @@ public class Product_BoardServiceImpl implements Product_BoardService {
 	@Override
 	public List<Product_BoardVO> search_GetProducts_WithFiltering(String order, String searchWord, int board_Status,
 			String trade_Address, int category_Id, int page) throws SQLException {
-		return product_BoardDao.search_GetProducts_WithFiltering(order, searchWord, board_Status, trade_Address, category_Id, page);
+		return product_BoardDao.search_GetProducts_WithFiltering(order, searchWord, board_Status, trade_Address,
+				category_Id, page);
 	}
 
 	@Override
 	public int search_GetProductsCount_WithFiltering(String searchWord, int board_Status, String trade_Address,
 			int category_Id) throws SQLException {
-		return product_BoardDao.search_GetProductsCount_WithFiltering(searchWord, board_Status, trade_Address, category_Id);
+		return product_BoardDao.search_GetProductsCount_WithFiltering(searchWord, board_Status, trade_Address,
+				category_Id);
 	}
 
 	@Override
